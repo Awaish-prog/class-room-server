@@ -654,6 +654,9 @@ io.on("connection", (socket) => {
     })  
 })
 
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "build/index.html"))
+})
 
 app.listen(4000, () => {
     console.log("Server runnning");
